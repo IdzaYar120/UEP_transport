@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Результат розрахунку</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="container">
+        <h1>📊 Результати розрахунку</h1>
+
+        <div class="total-cost">
+            Мінімальні загальні витрати: {{ total_cost }}
+        </div>
+
+        <div class="balance-info">
+            <strong>Загальні запаси:</strong> {{ total_supply }} | <strong>Загальні потреби:</strong> {{ total_demand }}
+            
+            {% if total_supply > total_demand %}
+                <br><i>(Надлишок запасів: {{ (total_supply - total_demand)|round(2) }} од. Залишиться на складах.)</i>
+            {% elif total_demand > total_supply %}
+                <br><i>(Дефіцит запасів: {{ (total_demand - total_supply)|round(2) }} од. Попит не буде задоволено повністю.)</i>
+            {% else %}
+                 <br><i>(Запаси та потреби ідеально збалансовані.)</i>
+            {% endif %}
+        </div>
+        <h2>Оптимальний план перевезень (скільки одиниць везти)</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Постач. \ Спож.</th>
+                    {% for j in range(num_consumers) %}
+                        <th>Споживач {{ j + 1 }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in range(num_suppliers) %}
+                <tr>
+                    <th>Постачальник {{ i + 1 }}</th>
+                    {% for j in range(num_consumers) %}
+                        <td class="solution-cell">{{ solution[i][j] }}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+                
+                {% if is_fictitious_supplier_added %}
+                <tr class="fictitious-row">
+                    <th>⚠️ Дефіцит (не задоволено)</th>
+                    {% for j in range(num_consumers) %}
+                        <td>{{ fictitious_shipments[j] }}</td>
+                    {% endfor %}
+                </tr>
+                {% endif %}
+                </tbody>
+        </table>
+
+        <div style="text-align: center;">
+            <a href="{{ url_for('setup') }}" class="back-link">⬅️ Ввести нові дані</a>
+        </div>
+    </div>
+
+</body>
+</html>

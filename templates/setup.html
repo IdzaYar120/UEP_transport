@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Налаштування задачі</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .setup-form {
+            max-width: 500px;
+            margin-top: 50px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 5px;
+            font-size: 18px;
+        }
+        .form-group input {
+            width: 95%; /* Використовуємо 95% як в main.css */
+        }
+        .submit-btn {
+            background-color: #007bff; /* Синя кнопка для "Далі" */
+        }
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container setup-form">
+        <h1>⚙️ Налаштування задачі</h1>
+        <p style="font-size: 16px; color: #555;">
+            Оберіть кількість постачальників та споживачів (максимум 10).
+        </p>
+
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+
+        <form action="{{ url_for('index') }}" method="get">
+            <div class="form-group">
+                <label for="num_suppliers">Кількість постачальників:</label>
+                <input type="number" id="num_suppliers" name="num_suppliers" value="4" min="1" max="10" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="num_consumers">Кількість споживачів:</label>
+                <input type="number" id="num_consumers" name="num_consumers" value="5" min="1" max="10" required>
+            </div>
+            
+            <button type="submit" class="submit-btn">Створити матрицю</button>
+        </form>
+    </div>
+
+</body>
+</html>

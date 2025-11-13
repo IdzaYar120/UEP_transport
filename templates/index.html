@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Транспортна задача</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="container">
+        <h1>🚚 Калькулятор транспортної задачі</h1>
+        <p style="text-align: center; font-size: 18px; color: #555;">
+            Введіть дані для <strong>{{ num_suppliers }}</strong> постачальників та <strong>{{ num_consumers }}</strong> споживачів.
+        </p>
+
+        <form action="/solve" method="post">
+            
+            <input type="hidden" name="num_suppliers" value="{{ num_suppliers }}">
+            <input type="hidden" name="num_consumers" value="{{ num_consumers }}">
+            {% if error %}
+                <p class="error">{{ error }}</p>
+            {% endif %}
+
+            <div class="form-layout">
+                <div class="form-section">
+                    <h2>Запаси постачальників</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Постачальник</th>
+                                <th>Кількість (одиниць)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for i in range(num_suppliers) %}
+                        <tr>
+                            <th>Постачальник {{ i + 1 }}</th>
+                            <td><input type="number" name="supply_{{ i }}" step="any" min="0" required></td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="form-section">
+                    <h2>Потреби споживачів</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Споживач</th>
+                                <th>Кількість (одиниць)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for i in range(num_consumers) %}
+                        <tr>
+                            <th>Споживач {{ i + 1 }}</th>
+                            <td><input type="number" name="demand_{{ i }}" step="any" min="0" required></td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <h2>Матриця витрат (або відстаней)</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Постач. \ Спож.</th>
+                        {% for j in range(num_consumers) %}
+                            <th>Споживач {{ j + 1 }}</th>
+                        {% endfor %}
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in range(num_suppliers) %}
+                    <tr>
+                        <th>Постачальник {{ i + 1 }}</th>
+                        {% for j in range(num_consumers) %}
+                        <td>
+                            <input type="number" name="cost_{{ i }}_{{ j }}" step="any" min="0" required>
+                        </td>
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+            <button type="submit" class="submit-btn">Розрахувати мінімальні витрати</button>
+        </form>
+    </div>
+
+</body>
+</html>

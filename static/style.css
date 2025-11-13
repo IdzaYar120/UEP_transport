@@ -1,0 +1,236 @@
+/* --- Загальні стилі --- */
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #f0f2f5; /* Світло-сірий фон для контрасту */
+    color: #333;
+    margin: 0;
+    padding: 30px 15px;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 20px auto;
+    padding: 35px 40px;
+    background-color: #ffffff;
+    border-radius: 16px; /* Більш м'які кути */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* М'яка, виражена тінь */
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50; /* Глибокий, насичений колір */
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+h2 {
+    color: #34495e; /* Трохи світліший за h1 */
+    border-bottom: 3px solid #5d9cec; /* Яскравий акцентний колір */
+    padding-bottom: 10px;
+    margin-top: 35px;
+    font-weight: 600;
+}
+
+/* --- Стилі таблиць --- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 25px;
+    border-radius: 12px; /* Закруглені кути для таблиці */
+    overflow: hidden; /* Обрізає все, що виходить за межі */
+    border: 1px solid #e0e0e0; /* Тонка рамка */
+}
+
+th, td {
+    border: 1px solid #e0e0e0;
+    padding: 14px 16px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 16px;
+}
+
+thead th {
+    background-color: #34495e; /* Темна шапка */
+    color: #ffffff;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9fafb; /* Легке зебрування */
+}
+
+tbody tr:hover {
+    background-color: #f0f4f8; /* Приємний колір при наведенні */
+}
+
+tbody th {
+    background-color: #fdfdfd;
+    text-align: left;
+    padding-left: 20px;
+    font-weight: 600;
+    color: #555;
+}
+
+/* --- Стилі форми --- */
+.form-layout {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.form-section {
+    flex: 1;
+    min-width: 300px;
+}
+
+input[type="number"] {
+    width: 95%;
+    padding: 12px;
+    border: 1px solid #ced4da;
+    border-radius: 8px; /* Більш м'які кути */
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: all 0.2s ease-in-out;
+}
+
+input[type="number"]:focus {
+    border-color: #5d9cec;
+    box-shadow: 0 0 0 4px rgba(93, 156, 236, 0.2); /* М'яка тінь при фокусі */
+    outline: none;
+}
+
+/* --- Кнопки та посилання --- */
+.submit-btn, .back-link {
+    display: inline-block;
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.submit-btn {
+    /* Градієнт для основної кнопки */
+    background: linear-gradient(90deg, #56ab2f 0%, #a8e063 100%);
+    margin-top: 20px;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px); /* Ефект "підйому" */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.back-link {
+    /* Градієнт для кнопки "Назад" */
+    background: linear-gradient(90deg, #007bff 0%, #00a2ff 100%);
+    margin-top: 30px;
+    width: auto; /* Дозволяємо їй бути меншою */
+    padding: 12px 25px;
+}
+
+.back-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* --- Сторінка вибору M і N (setup.html) --- */
+.setup-form {
+    max-width: 500px;
+    margin-top: 50px;
+}
+.form-group {
+    margin-bottom: 25px;
+}
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 18px;
+    color: #333;
+}
+.setup-form .submit-btn {
+    /* Синій градієнт для кнопки "Створити матрицю" */
+    background: linear-gradient(90deg, #007bff 0%, #00a2ff 100%);
+}
+
+/* --- Сторінка результатів --- */
+.total-cost {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700; /* Жирніший шрифт */
+    color: #2a9d8f; /* Приємний зелений колір */
+    margin: 20px 0 30px 0;
+    padding: 25px;
+    background: #f0fdfa; /* Дуже світлий зелений */
+    border-radius: 12px;
+    border: 2px solid #b6eadd; /* Акцентна рамка */
+}
+
+.balance-info {
+    text-align: center;
+    font-style: italic;
+    color: #6c757d;
+    margin-bottom: 30px;
+    font-size: 15px;
+    background: #f8f9fa;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.solution-cell {
+    font-weight: 700;
+    font-size: 18px;
+    color: #0056b3; /* Насичений синій */
+    background-color: #e7f3ff; /* Світло-блакитний фон */
+}
+
+/* --- Помилки --- */
+.error {
+    color: #d90429; /* Яскравий червоний */
+    background-color: #fff0f3;
+    border: 1px solid #ffb3c1;
+    padding: 15px 20px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+/* --- Адаптивність (для маленьких екранів) --- */
+@media (max-width: 768px) {
+    body {
+        padding: 15px 5px;
+    }
+    .container {
+        padding: 20px;
+    }
+    .form-layout {
+        flex-direction: column;
+        gap: 15px;
+    }
+    h1 { font-size: 26px; }
+    h2 { font-size: 22px; }
+    .total-cost { font-size: 24px; }
+}
+/* --- Стиль для рядка з дефіцитом --- */
+.fictitious-row th,
+.fictitious-row td {
+    background-color: #fff0f3; /* Світло-червоний фон */
+    color: #d90429; /* Темно-червоний текст */
+    font-weight: 700; /* Жирний шрифт */
+    border-top: 2px solid #ffb3c1; /* Червона верхня межа */
+}
