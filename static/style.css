@@ -1,7 +1,6 @@
-/* --- Загальні стилі --- */
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    background-color: #f0f2f5; /* Світло-сірий фон для контрасту */
+    background-color: #f0f2f5; 
     color: #333;
     margin: 0;
     padding: 30px 15px;
@@ -13,33 +12,32 @@ body {
     margin: 20px auto;
     padding: 35px 40px;
     background-color: #ffffff;
-    border-radius: 16px; /* Більш м'які кути */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* М'яка, виражена тінь */
+    border-radius: 16px; 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); 
 }
 
 h1 {
     text-align: center;
-    color: #2c3e50; /* Глибокий, насичений колір */
+    color: #2c3e50;
     margin-bottom: 25px;
     font-weight: 700;
 }
 
 h2 {
-    color: #34495e; /* Трохи світліший за h1 */
-    border-bottom: 3px solid #5d9cec; /* Яскравий акцентний колір */
+    color: #34495e;
+    border-bottom: 3px solid #5d9cec;
     padding-bottom: 10px;
     margin-top: 35px;
     font-weight: 600;
 }
 
-/* --- Стилі таблиць --- */
 table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 25px;
-    border-radius: 12px; /* Закруглені кути для таблиці */
-    overflow: hidden; /* Обрізає все, що виходить за межі */
-    border: 1px solid #e0e0e0; /* Тонка рамка */
+    border-radius: 12px;
+    overflow: hidden; 
+    border: 1px solid #e0e0e0; 
 }
 
 th, td {
@@ -51,7 +49,7 @@ th, td {
 }
 
 thead th {
-    background-color: #34495e; /* Темна шапка */
+    background-color: #34495e; 
     color: #ffffff;
     font-weight: 600;
     text-transform: uppercase;
@@ -60,11 +58,11 @@ thead th {
 }
 
 tbody tr:nth-child(even) {
-    background-color: #f9fafb; /* Легке зебрування */
+    background-color: #f9fafb;
 }
 
 tbody tr:hover {
-    background-color: #f0f4f8; /* Приємний колір при наведенні */
+    background-color: #f0f4f8; 
 }
 
 tbody th {
@@ -75,7 +73,6 @@ tbody th {
     color: #555;
 }
 
-/* --- Стилі форми --- */
 .form-layout {
     display: flex;
     justify-content: space-between;
@@ -92,7 +89,7 @@ input[type="number"] {
     width: 95%;
     padding: 12px;
     border: 1px solid #ced4da;
-    border-radius: 8px; /* Більш м'які кути */
+    border-radius: 8px; 
     font-size: 16px;
     box-sizing: border-box;
     transition: all 0.2s ease-in-out;
@@ -100,11 +97,10 @@ input[type="number"] {
 
 input[type="number"]:focus {
     border-color: #5d9cec;
-    box-shadow: 0 0 0 4px rgba(93, 156, 236, 0.2); /* М'яка тінь при фокусі */
+    box-shadow: 0 0 0 4px rgba(93, 156, 236, 0.2); 
     outline: none;
 }
 
-/* --- Кнопки та посилання --- */
 .submit-btn, .back-link {
     display: inline-block;
     width: 100%;
@@ -123,21 +119,20 @@ input[type="number"]:focus {
 }
 
 .submit-btn {
-    /* Градієнт для основної кнопки */
+    
     background: linear-gradient(90deg, #56ab2f 0%, #a8e063 100%);
     margin-top: 20px;
 }
 
 .submit-btn:hover {
-    transform: translateY(-2px); /* Ефект "підйому" */
+    transform: translateY(-2px); 
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
 
 .back-link {
-    /* Градієнт для кнопки "Назад" */
     background: linear-gradient(90deg, #007bff 0%, #00a2ff 100%);
     margin-top: 30px;
-    width: auto; /* Дозволяємо їй бути меншою */
+    width: auto; 
     padding: 12px 25px;
 }
 
@@ -146,7 +141,6 @@ input[type="number"]:focus {
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
 
-/* --- Сторінка вибору M і N (setup.html) --- */
 .setup-form {
     max-width: 500px;
     margin-top: 50px;
@@ -162,21 +156,18 @@ input[type="number"]:focus {
     color: #333;
 }
 .setup-form .submit-btn {
-    /* Синій градієнт для кнопки "Створити матрицю" */
     background: linear-gradient(90deg, #007bff 0%, #00a2ff 100%);
 }
 
-/* --- Сторінка результатів --- */
 .total-cost {
     text-align: center;
     font-size: 28px;
-    font-weight: 700; /* Жирніший шрифт */
-    color: #2a9d8f; /* Приємний зелений колір */
+    font-weight: 700; 
+    color: #2a9d8f; 
     margin: 20px 0 30px 0;
     padding: 25px;
-    background: #f0fdfa; /* Дуже світлий зелений */
-    border-radius: 12px;
-    border: 2px solid #b6eadd; /* Акцентна рамка */
+    background: #f0fdfa; 
+    border: 2px solid #b6eadd; 
 }
 
 .balance-info {
@@ -193,13 +184,12 @@ input[type="number"]:focus {
 .solution-cell {
     font-weight: 700;
     font-size: 18px;
-    color: #0056b3; /* Насичений синій */
-    background-color: #e7f3ff; /* Світло-блакитний фон */
+    color: #0056b3;
+    background-color: #e7f3ff; 
 }
 
-/* --- Помилки --- */
 .error {
-    color: #d90429; /* Яскравий червоний */
+    color: #d90429; 
     background-color: #fff0f3;
     border: 1px solid #ffb3c1;
     padding: 15px 20px;
@@ -210,7 +200,6 @@ input[type="number"]:focus {
     font-size: 16px;
 }
 
-/* --- Адаптивність (для маленьких екранів) --- */
 @media (max-width: 768px) {
     body {
         padding: 15px 5px;
@@ -226,11 +215,11 @@ input[type="number"]:focus {
     h2 { font-size: 22px; }
     .total-cost { font-size: 24px; }
 }
-/* --- Стиль для рядка з дефіцитом --- */
 .fictitious-row th,
 .fictitious-row td {
-    background-color: #fff0f3; /* Світло-червоний фон */
-    color: #d90429; /* Темно-червоний текст */
-    font-weight: 700; /* Жирний шрифт */
-    border-top: 2px solid #ffb3c1; /* Червона верхня межа */
+    background-color: #fff0f3; 
+    color: #d90429; 
+    font-weight: 700; 
+    border-top: 2px solid #ffb3c1; 
+
 }
